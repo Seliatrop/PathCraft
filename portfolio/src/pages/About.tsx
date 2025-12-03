@@ -22,7 +22,7 @@ function About() {
         <div className="profile-container">
           <div className="profile-card">
             <div className="profile-image">
-              <div className="profile-icon">👨‍💻</div>
+              <img src="/src/assets/profile-picture.jpg" alt="Tony ZHENG" className="profile-photo" />
             </div>
             <div className="profile-info">
               <h2 className="profile-name">Tony ZHENG</h2>
@@ -97,45 +97,7 @@ function About() {
       {/* Skills Section */}
       <Competence />
 
-      {/* Values Section */}
-      <section className="values-section">
-        <div className="values-container">
-          <h2 className="section-title">Mes Valeurs</h2>
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-icon">🚀</div>
-              <h3 className="value-title">Innovation</h3>
-              <p className="value-description">
-                Toujours à la recherche de nouvelles technologies et méthodes pour créer des solutions modernes
-              </p>
-            </div>
-
-            <div className="value-card">
-              <div className="value-icon">🎯</div>
-              <h3 className="value-title">Précision</h3>
-              <p className="value-description">
-                Attention méticuleuse aux détails pour garantir la qualité et la fiabilité du code
-              </p>
-            </div>
-
-            <div className="value-card">
-              <div className="value-icon">🤝</div>
-              <h3 className="value-title">Collaboration</h3>
-              <p className="value-description">
-                Travail d'équipe efficace et communication claire pour atteindre des objectifs communs
-              </p>
-            </div>
-
-            <div className="value-card">
-              <div className="value-icon">📚</div>
-              <h3 className="value-title">Apprentissage</h3>
-              <p className="value-description">
-                Curiosité constante et volonté d'apprendre pour rester à jour dans un domaine en évolution
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }

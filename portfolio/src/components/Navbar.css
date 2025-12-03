@@ -42,57 +42,35 @@
   height: 45px;
   margin-right: 15px;
   position: relative;
-}
-
-.logo-prism {
-  width: 100%;
-  height: 100%;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.prism-shape {
-  width: 30px;
-  height: 30px;
-  position: relative;
-  transform: rotate(45deg);
+  border-radius: 8px;
+  overflow: hidden;
   background: linear-gradient(135deg,
-      var(--accent-red) 0%,
-      var(--accent-blue) 33%,
-      var(--accent-green) 66%,
-      var(--accent-purple) 100%);
-  animation: prismShine 3s ease-in-out infinite;
+      rgba(var(--accent-blue-rgb), 0.1),
+      rgba(var(--accent-purple-rgb), 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-@keyframes prismShine {
-  0%, 100% {
-    filter: brightness(1) hue-rotate(0deg);
-    transform: rotate(45deg) scale(1);
-  }
-  50% {
-    filter: brightness(1.5) hue-rotate(10deg);
-    transform: rotate(45deg) scale(1.1);
-  }
-}
-
-.prism-shape::before,
-.prism-shape::after {
-  content: '';
-  position: absolute;
+.logo-icon img {
   width: 100%;
   height: 100%;
-  background: inherit;
-  opacity: 0.5;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(1);
 }
 
-.prism-shape::before {
-  transform: rotate(60deg);
+.nav-logo:hover .logo-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--accent-blue-rgb), 0.3);
+  border-color: rgba(var(--accent-cyan-rgb), 0.5);
 }
 
-.prism-shape::after {
-  transform: rotate(-60deg);
+.nav-logo:hover .logo-icon img {
+  filter: brightness(1.2);
+  transform: scale(1.05);
 }
 
 .logo-text {

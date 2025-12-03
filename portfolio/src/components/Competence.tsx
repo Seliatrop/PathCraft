@@ -9,36 +9,116 @@ interface Skill {
 }
 
 const skillsData: Skill[] = [
-  { name: 'React.js', icon: '⚛️', level: 95, category: 'frontend' },
-  { name: 'Node.js', icon: '🟢', level: 90, category: 'backend' },
-  { name: 'TypeScript', icon: '📘', level: 88, category: 'frontend' },
-  { name: 'AWS', icon: '☁️', level: 92, category: 'cloud' },
-  { name: 'Docker', icon: '🐳', level: 85, category: 'cloud' },
-  { name: 'Python', icon: '🐍', level: 93, category: 'backend' },
-  { name: 'Kubernetes', icon: '☸️', level: 82, category: 'cloud' },
-  { name: 'GraphQL', icon: '◈', level: 87, category: 'backend' },
-  { name: 'TensorFlow', icon: '🤖', level: 78, category: 'emerging' },
-  { name: 'Blockchain', icon: '🔗', level: 75, category: 'emerging' },
-  { name: 'Vue.js', icon: '💚', level: 85, category: 'frontend' },
-  { name: 'MongoDB', icon: '🍃', level: 90, category: 'backend' },
+  {
+    name: 'MongoDB',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+    level: 40,
+    category: 'backend',
+  },
+  {
+    name: 'Web languages (HTML, CSS)',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    level: 80,
+    category: 'frontend',
+  },
+  {
+    name: 'Docker',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+    level: 60,
+    category: 'cloud',
+  },
+  {
+    name: 'Bash/Shell',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
+    level: 60,
+    category: 'emerging',
+  },
+  {
+    name: 'Java',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+    level: 70,
+    category: 'backend',
+  },
+  {
+    name: 'JavaScript',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    level: 50,
+    category: 'frontend',
+  },
+  {
+    name: 'SQL',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+    level: 60,
+    category: 'backend',
+  },
+  {
+    name: 'TypeScript',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+    level: 56,
+    category: 'frontend',
+  },
+  {
+    name: 'React.js',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    level: 46,
+    category: 'frontend',
+  },
+  {
+    name: 'Python',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+    level: 45,
+    category: 'backend',
+  },
+  {
+    name: 'Angular',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+    level: 45,
+    category: 'frontend',
+  },
+  {
+    name: 'Node.js',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    level: 42,
+    category: 'backend',
+  },
+  {
+    name: 'J2EE',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+    level: 40,
+    category: 'backend',
+  },
+  {
+    name: 'Cisco',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
+    level: 30,
+    category: 'emerging',
+  },
+  {
+    name: 'Php',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+    level: 30,
+    category: 'backend',
+  },
+  {
+    name: 'Vue.js',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+    level: 20,
+    category: 'frontend',
+  },
 ];
 
 export default function Competence() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const filteredSkills = activeCategory === 'all'
-    ? skillsData
-    : skillsData.filter(skill => skill.category === activeCategory);
+  const filteredSkills =
+    activeCategory === 'all'
+      ? [...skillsData].sort((a, b) => b.level - a.level)
+      : skillsData.filter(skill => skill.category === activeCategory).sort((a, b) => b.level - a.level);
 
   return (
     <section className="skills-section" id="skills">
       <div className="skills-container">
-        <div className="section-header">
-          <h2 className="section-title">Technical Arsenal</h2>
-          <p className="section-subtitle">
-            Mastery of cutting-edge technologies and frameworks
-          </p>
-        </div>
+
 
         <div className="skill-categories">
           <button
@@ -82,10 +162,19 @@ export default function Competence() {
             >
               <div className="hexagon-inner">
                 <div className="hexagon-content">
-                  <div className="skill-icon-hex">{skill.icon}</div>
+                  <div className="skill-icon-hex">
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="skill-icon-img"
+                    />
+                  </div>
                   <div className="skill-name-hex">{skill.name}</div>
                   <div className="skill-level">
-                    <div className="skill-level-fill" style={{ width: `${skill.level}%` }}></div>
+                    <div
+                      className="skill-level-fill"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
                   </div>
                   <div className="skill-percentage-hex">{skill.level}%</div>
                 </div>

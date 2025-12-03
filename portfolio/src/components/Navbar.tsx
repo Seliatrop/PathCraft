@@ -31,9 +31,7 @@ function Navbar() {
       <nav className="nav-container">
         <Link to="/" className="nav-logo">
           <div className="logo-icon">
-            <div className="logo-prism">
-              <div className="prism-shape"></div>
-            </div>
+            <img src="/ico_Tony.png" alt="Tony ZHENG Logo" />
           </div>
           <div className="logo-text">
             <span className="prism">Tony</span>
