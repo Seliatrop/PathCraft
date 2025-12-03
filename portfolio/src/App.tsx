@@ -5,6 +5,7 @@ import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/projects" element={<Portfolio />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
+
+        <Contact />
 
         <Footer />
       </BrowserRouter>
