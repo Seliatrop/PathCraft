@@ -3,13 +3,14 @@ import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Header />
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -17,6 +18,8 @@ function App() {
           <Route path="/projects" element={<Portfolio />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </>
   );

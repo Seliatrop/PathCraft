@@ -1,4 +1,4 @@
-import Caroussel from '../components/Caroussel';
+import Card from '../components/Card';
 import '../index.css';
 
 function Home() {
@@ -24,7 +24,8 @@ function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              animation: 'gradientFlow 5s ease infinite'
+              animation: 'gradientFlow 5s ease infinite',
+              marginTop: '20px'
             }}
           >
             Tony
@@ -74,7 +75,7 @@ function Home() {
           </p>
         </div>
         
-        <Caroussel />
+        <Card />
       </div>
 
       <style>{`

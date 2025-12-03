@@ -16,9 +16,9 @@ interface CarouselItem {
 const carouselData: CarouselItem[] = [
     {
         id: 1,
-        title: 'About Me',
+        title: '',
         description: 'Découvrez mon parcours, mes compétences et ma passion pour le développement informatique.',
-        image: bannerAboutMe,
+        image: ,
         tech: [],
         link: '/about'
     },
@@ -26,7 +26,7 @@ const carouselData: CarouselItem[] = [
         id: 2,
         title: 'Portfolio',
         description: 'Explorez mes projets et réalisations dans le développement web et logiciel.',
-        image: bannerPortfolio,
+        image: ,
         tech: [],
         link: '/projects'
     }
@@ -49,13 +49,11 @@ export default function Caroussel() {
         setCurrentIndex(index);
     };
 
-    // Auto-rotate carousel
     useEffect(() => {
         const interval = setInterval(nextSlide, 5000);
         return () => clearInterval(interval);
     }, []);
 
-    // Keyboard navigation
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'ArrowLeft') prevSlide();
