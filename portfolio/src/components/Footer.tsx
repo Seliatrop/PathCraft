@@ -50,7 +50,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Resources */}
         <div className="footer-section">
           <h4>Ressources</h4>
           <div className="footer-links">

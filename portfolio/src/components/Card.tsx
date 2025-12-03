@@ -12,7 +12,7 @@ interface CardData {
 const cardsData: CardData[] = [
   {
     id: 1,
-    title: 'About Me',
+    title: 'À propos',
     description: 'Découvrez mon parcours, mes compétences techniques et ma passion pour le développement informatique. En savoir plus sur mes expériences et mes aspirations professionnelles.',
     icon: '👤',
     link: '/about'

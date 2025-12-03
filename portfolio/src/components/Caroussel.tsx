@@ -16,9 +16,9 @@ interface CarouselItem {
 const carouselData: CarouselItem[] = [
     {
         id: 1,
-        title: '',
+        title: 'À propos',
         description: 'Découvrez mon parcours, mes compétences et ma passion pour le développement informatique.',
-        image: ,
+        image: bannerAboutMe,
         tech: [],
         link: '/about'
     },
@@ -26,7 +26,7 @@ const carouselData: CarouselItem[] = [
         id: 2,
         title: 'Portfolio',
         description: 'Explorez mes projets et réalisations dans le développement web et logiciel.',
-        image: ,
+        image: bannerPortfolio,
         tech: [],
         link: '/projects'
     }
@@ -98,7 +98,6 @@ export default function Caroussel() {
         <section className="carousel-section">
             <div className="carousel-wrapper">
                 <div className="carousel-stage">
-                    {/* Carousel Items */}
                     {carouselData.map((item, index) => (
                         <div
                             key={item.id}
@@ -133,7 +132,6 @@ export default function Caroussel() {
                         </div>
                     ))}
 
-                    {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
                         className="carousel-nav-btn prev"
@@ -149,7 +147,6 @@ export default function Caroussel() {
                         ›
                     </button>
 
-                    {/* Indicators */}
                     <div className="carousel-indicators-wrapper">
                         {carouselData.map((_, index) => (
                             <button

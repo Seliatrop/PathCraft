@@ -58,7 +58,7 @@ function Navbar() {
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
               onClick={closeMenu}
             >
-              Home
+              Accueil
             </Link>
           </li>
           <li>
@@ -67,7 +67,7 @@ function Navbar() {
               className={`nav-link ${isActive('/about') ? 'active' : ''}`}
               onClick={closeMenu}
             >
-              About
+              À propos
             </Link>
           </li>
           <li>
