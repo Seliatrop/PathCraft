@@ -125,7 +125,7 @@ export default function Competence() {
             className={`category-tab ${activeCategory === 'all' ? 'active' : ''}`}
             onClick={() => setActiveCategory('all')}
           >
-            All Skills
+            Tous les compétences
           </button>
           <button
             className={`category-tab ${activeCategory === 'frontend' ? 'active' : ''}`}
