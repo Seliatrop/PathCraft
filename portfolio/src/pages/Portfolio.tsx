@@ -1,5 +1,10 @@
+import Caroussel from "../components/Caroussel";
+
 function Portfolio() {
-  return <div>Portfolio Page</div>;
+  return <div>
+    <h1>Portfolio Page</h1> 
+    <Caroussel />
+  </div>;
 }
 
 export default Portfolio;
