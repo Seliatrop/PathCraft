@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Caroussel.css';
 import bannerAboutMe from '../assets/banner_about-me.png';
 import bannerPortfolio from '../assets/banner_portfolio.png';
+import p_portfolio from '../assets/project_portfolio.png';
 
 interface CarouselItem {
     id: number;
@@ -16,11 +17,11 @@ interface CarouselItem {
 const carouselData: CarouselItem[] = [
     {
         id: 1,
-        title: 'À propos',
-        description: 'Découvrez mon parcours, mes compétences et ma passion pour le développement informatique.',
-        image: bannerAboutMe,
+        title: 'Ancien Portfolio',
+        description: 'Voici mon ancien portfolio réalisé en 2023 pour présenter mes compétences et projets.',
+        image: p_portfolio,
         tech: [],
-        link: '/about'
+        link: 'https://github.com/Seliatrop/Portfolio'
     },
     {
         id: 2,
@@ -125,9 +126,11 @@ export default function Caroussel() {
                                     ))}
                                 </div>
                                 
-                                <Link to={item.link} className="card-cta-link">
-                                    <button className="card-cta">Explorer</button>
-                                </Link>
+                                {item.link.startsWith('http') ? (
+                                    <a href={item.link} className="card-cta-link card-cta" target="_blank" rel="noopener noreferrer">Explorer</a>
+                                ) : (
+                                    <Link to={item.link} className="card-cta-link card-cta">Explorer</Link>
+                                )}
                             </div>
                         </div>
                     ))}
